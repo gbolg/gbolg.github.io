@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<base target="_blank">
+
+<script type="text/javascript" src="qs.js">
+</script>
+
+<script>
+
+var photoSites = [
+  "Ancensored.com/site/search?q=%s",
+  "Vintage-erotica-forum.com/search.php?do=process&type=advanced&titleonly=1&query=%s",
+  "Xhamster.com/search.php?from=&new=&q=%s&qcat=pictures",
+];
+
+var videoSites = [
+  "www.AnySex.com/search/?q=%s",
+  "www.DefineBabe.com/search/?words=%s&search=&type=1",
+  "www.GonzoXxxmovies.com/search/%s/",
+  "www.Nudevista.com/?q=%s&s=t",
+  "ipad.PerfectGirls.net/search/%s/",
+  "www.Porn.com/videos/search?q=%s",
+  "www.Pornhub.com/video/search?search=%s",
+  "www.Pornmd.com/straight/%s",
+  "www.Porntube.com/search/?q=%s",
+  "www.Redtube.com/?search=%s",
+  "www.Tnaflix.com/search.php?what=%s",
+  "www.Tube8.com/searches.html?q=%s",
+  "www.TubePornClassic.com/search/%s/",
+  "www.Tubestack.com/search/%s/",
+  "www.Tukif.com/search/%s/",
+  "www.Txxx.com/search/?s=%s",
+  "www.Xhamster.com/search.php?from=&new=&q=%s&qcat=video",
+  "www.Xnxx.com/?k=%s",
+  "www.Xvideos.com/?k=%s",
+  "www.Youjizz.com/search/%s-1.html",
+  "www.Youporn.com/search/?query=%s",
+  "m.Youtube.com/results?q=%s&sm=3",
+];
+
+var playMates = [
+  "Angel+Boris",
+  "Anna+Clark",
+  "Ava+Fabian",
+  "Cady+Cantrell",
+  "Carmella+DeCesare",
+  "Carmen+Berg",
+  "Dalene+Kurtis",
+  "Divini+Rae",
+  "Dona+Speir",
+  "Donna+D'Errico",
+  "Dorothy+Stratten",
+  "Elisa+Bridges",
+  "Erika+Eleniak",
+  "Heather+Kozar",
+  "Holly+Witt",
+  "Jaime+Bergman",
+  "Jennifer+Walcott",
+  "Jenny+McCarthy",
+  "Julie+Clarke",
+  "Katie+Lohmann",
+  "Heather+Carolin",
+  "Karen+Foster",
+  "Kerri+Kendall",
+  "Kimberley+Conrad",
+  "Kimberly+McArthur",
+  "Kristine+Winder",
+  "Liz+Stewart",
+  "Marianne+Gravatte",
+  "Neriah+Davis",
+  "Nikki+Schieler",
+  "Pamela+Stein",
+  "Pamela+Anderson",
+  "Peggy+McIntaggart",
+  "Penny+Baker",
+  "Shannon+Stewart",
+  "Stacy+Arthur",
+  "Susie+Owens",
+  "Suzi+Simpson",
+  "Teri+Lynn+Doss",
+  "Wendy+Kaye",
+];
+
+var vintageStars = [
+  "Blondi+Bee",
+  "Brandi+Downs",
+  "Candie+Evans",
+  "Lorissa+McComas",
+  "Nikki+Fritz",
+  "Shauna+O%27Brien",
+];
+
+var tv = [
+  "Elizabeth+Berkley",
+  "Tiffani+Thiessen",
+  "Jennifer+Aniston",
+  "Lisa+Kudrow",
+  "Courtney+Cox",
+  "April+Bowlby",
+  "Sarah+Jessica+Parker",
+  "Sarah+Chalke",
+  "Natalie+Portman",
+  "Nikki+Cox",
+];
+
+var allStars = [
+  "Blondi+Bee",
+  "Candie+Evans",
+  "Carli+Banks",
+  "Donna+D'Errico",
+  "Heather+Vandeven",
+  "Katie+Morgan",
+  "Kim+Yates",
+  "Lexi+Belle",
+  "Lorissa+McComas",
+  "Lupe+Fuentes",
+  "Molinee+Green",
+  "Monique+Alexander",
+  "Nikki+Fritz",
+  "Sarah+Jessie",
+  "Maria+Ford",
+  "Mia+Presley",
+  "Mia+Zottoli",
+  "Monique+Parent",
+  "Zuzana+Drabinova",
+
+  "April+Arikssen",
+  "Amateur+Allure",
+  "August+Ames",
+  "Anika+Fox",
+  "Amy+Lindsay",
+  "Amy+Reid",
+  "Alex+Taylor",
+  "Brandi+Love",
+  "Brianna+Frost",
+  "Cock+Hero",
+  "Cody+Milo",
+  "Crissy+Moran",
+  "Chloe+Nicole",
+  "Dolorian",
+  "Erika+Jordan",
+  "Erotic+Traveler",
+  "Esperanza+Gomez",
+  "Francine+Dee",
+  "Fucked+Hard",
+  "Gemma+Massey",
+  "Gina+Gerson",
+  "Jacqueline+Lovell",
+  "Sara+St+James",
+  "Jessie+Summers",
+  "Lezley+Zen",
+  "Mandy+Lynn",
+  "Nessa+Devil",
+  "Nicole+Aniston",
+  "Nicole+Sheridan",
+  "Presley+Hart",
+  "Sandy+Wasko",
+  "Shawna+Lenee",
+  "Teanna+Kai",
+  "Tj+Hart",
+  "Veronika+Fasterova",
+  "Valerie+Rios",
+  "Veronica+Rodriguez",
+  "Veronica+Zemanova",
+
+
+  "Ashley+Lawrence",
+];
+
+function makeButtons() {
+
+  makeQueryCollection("Who",       allStars);
+
+  makeSiteCollection("Photos", photoSites);
+  makeSiteCollection("Video", videoSites);
+
+  makeQueryCollection("TV",        tv);
+  makeQueryCollection("Playmates", playMates);
+
+  if (!getPersistent("globalSite")) {
+    setGlobalSite("www.Nudevista.com/?q=%s&s=t");
+    setGlobalQuery("Candie+Evans");
+  }
+}
+</script>
+</head>
+
+<body onload="makeButtons()">
+</body>
+</html>
