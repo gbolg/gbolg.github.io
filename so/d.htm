@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script type="text/javascript" src="qs.js">
+</script>
+
+<script>
+
+
+var videoPlaybackRate = 0.2;
+
+// var base = "file:///Volumes/Untitled/Videos/Kids";
+// var base = "ftp:///73.39.225.169:21/Android/hard/ce";
+// var base = "file:///Volumes/Untitled/Code/s/v/hard/ce";
+// var base = "file:///Volumes/Untitled/Code/s/v/";
+// var base = "172.25.63.1/files/Code/s/v/";
+var base = "http://172.25.63.1/cache/078C6775DEADBEEFFEEDFACEDEADBEEF00000000000000000000000000000000/files/Code/s/v/";
+
+var videoSources = [
+
+"lm/m/Dancing Girl.mp4",
+"lm/m/Lorissa McComas - Spankwire.com.mp4",
+"lm/m/Lorissa McComas strip.mp4",
+"lm/wondershare/Lorissa McComas - Lap Dancing - KeezMovies.com.mp4",
+"lm/wondershare/LORISSA MCCOMAS and NIKKI FRITZ.mp4",
+"lm/wondershare/LORISSA MCCOMAS PRIVATE DANCE - Pornhub.com#!.mp4",
+"lm/wondershare/Lorissa McComas Testing The Limits - MadThumbs&trade;.mp4",
+"lm/wondershare/Lorissa__McComas05.mp4",
+"lm/wondershare/Lorissa__McComas08.mp4",
+"lm/unsynced/lm1.mp4",
+"lm/unsynced/lm3.mp4",
+"lm/unsynced/lm2.mp4",
+"lm/unsynced/Live Nude Shakespeare.mp4",
+"lm/unsynced/air1.mp4",
+"lm/unsynced/air2.mp4",
+"lm/unsynced/Lap Dancing.mp4",
+"hard/ce/Tunnel of Love.mp4",
+"hard/ce/scene collection 3.mp4",
+"hard/ce/scene collection 2.mp4",
+"hard/ce/scene collection 1.mp4",
+"hard/ce/Golden Bone.mp4",
+"hard/ce/Locker Room.mp4",
+"hard/ce/Best Chest.mp4",
+"hard/ce/Dr. Janet.mp4",
+"hard/ce/Party Favors 1.mp4",
+"hard/ce/Party Favors 2.mp4",
+"hard/ce/Party Favors 3.mp4",
+"hard/gd/Atlanta.mp4",
+"hard/gd/gsd1.mp4",
+"hard/gd/gsd2.mp4",
+"hard/gd/gsd3.mp4",
+"hard/gd/gsd4.mp4",
+"hard/gd/gsd5.mp4",
+"hard/gd/gsd6.mp4",
+"hard/gd/gsd7.mp4",
+"hard/gd/gsdParadise.mp4",
+"hard/gd/ZemanovaGarden.mp4",
+"hard/sj/Xvideos.Com 54Fb25882B4A409F8A6D14F3E1A021C0.mp4",
+"hard/sj/Xvideos.Com Cd9A79286E0B26A2Ac845Fbd3D574397 1.mp4",
+"hard/sj/Xvideos.Com 92F2Bd8691E7654E88C5305C2D20Fbec 1.mp4",
+"hard/sj/Xvideos.Com 24507B3B7137F27Ac9958Cc26Aa3E0Fa.mp4",
+"hard/km/km1040.mp4",
+"hard/km/km2250.mp4",
+"hard/km/27484.mp4",
+"hard/km/Sharing My Wife Katie Morgan 480P.mp4",
+"hard/km/evanstone.mp4",
+"hard/km/Black Label.mp4",
+"hard/km/Postcard 1.mp4",
+"hard/km/69.mp4",
+"hard/km/stairs.mp4",
+"hard/km/poolboy.mp4",
+"hard/km/Postcard 5.mp4",
+"hard/other/NicoleAnistonGym.mp4",
+"hard/other/ride.mp4",
+"other/Tan Asian Fake Tits Bikini - Pornhub.com#!.mp4",
+"other/Tan asian fake tits pink bikini - Pornhub.com.mp4",
+"other/jw/Jennifer Walcott Revealed.mp4",
+"other/ma/Monique Alexander - DREAM POV - Pornhub.com.mp4",
+"other/mf/Stripteaser  - Amateur sex video - Tube8.com.mp4",
+"stashed/TIAO_JeanPoremba_strips.mp4",
+"stashed/lm/Bath.mp4",
+"stashed/lm/Dancing Girl.mp4",
+"stashed/lm/lmBachelorParty.mp4",
+"stashed/lm/lmChaise.mp4",
+"stashed/lm/LMC_LapDancing_Divx.mp4",
+"stashed/lm/lmX.mp4",
+"stashed/lm/Lorissa McComas - Spankwire.com.mp4",
+"stashed/lm/LORISSA MCCOMAS PRIVATE DANCE - Pornhub.com#!.mp4",
+"stashed/lm/Lorissa McComas strip.mp4",
+"stashed/lm/Lorissa_McComas-Virtual_Desire-01.mp4",
+"stashed/lm/Lorissa_McComas-Voyeur-02.mp4",
+"stashed/lm/Mkone5865-HardAsNails-LorissaMcComas.mp4",
+"stashed/max/be/be1092230.mp4",
+"stashed/max/be/be1121730.mp4",
+"stashed/max/be/be1131445.mp4",
+"stashed/max/bs/bs1030200.mp4",
+"stashed/max/bs/bs1030930.mp4",
+"stashed/max/bs/bs1031200.mp4",
+"stashed/max/bs/bs1080230.mp4",
+"stashed/max/bs/bs1081130.mp4",
+"stashed/max/bs/bs1081900.mp4",
+"stashed/max/bs/bs2010930.mp4",
+"stashed/max/cc/cc2091400.mp4",
+"stashed/max/cc/cc2110000.mp4",
+"stashed/max/cc/cc321410.mp4",
+"stashed/max/cc/cc322430.mp4",
+"stashed/max/cc/cc331120.mp4",
+"stashed/max/cc/cc331630.mp4",
+"stashed/max/cc/cc331950.mp4",
+"stashed/max/cc/cc340540.mp4",
+"stashed/max/cc/cc342400.mp4",
+"stashed/max/cc/cc342620.mp4",
+"stashed/max/da/da0220.mp4",
+"stashed/max/da/da3800.mp4",
+"stashed/max/da/da5720.mp4",
+"stashed/max/he/he1070830.mp4",
+"stashed/max/he/he1072300.mp4",
+"stashed/max/he/he1111130.mp4",
+"stashed/max/he/he1111900.mp4",
+"stashed/max/he/he2012400.mp4",
+"stashed/max/he/he2143340.mp4",
+"stashed/max/he/he2145200.mp4",
+"stashed/max/he/he3145900.mp4",
+"stashed/max/he/he3165200.mp4",
+"stashed/max/he/he3165800.mp4",
+"stashed/max/he/he31711645.mp4",
+"stashed/max/he/he3173615.mp4",
+"stashed/max/he/he3175850.mp4",
+"stashed/max/hl/hl2134025.mp4",
+"stashed/max/l/l2070100.mp4",
+"stashed/max/mv/bj3600.mp4",
+"stashed/max/mv/hap4100.mp4",
+"stashed/max/mv/haw0000.mp4",
+"stashed/max/nr/nr10100.mp4",
+"stashed/max/nr/nr2600.mp4",
+"stashed/max/nr/nr4020.mp4",
+"stashed/max/rs/rs085500.mp4",
+"stashed/max/rs/rs181530.mp4",
+"stashed/max/rs/rs191848.mp4",
+"stashed/max/rs/rs192530.mp4",
+"stashed/max/rs/rs200150.mp4",
+"stashed/max/rs/rs200520.mp4",
+"stashed/max/rs/rs201140.mp4",
+"stashed/max/rs/rs211900.mp4",
+"stashed/max/sc/sc1093100.mp4",
+"stashed/max/sg/sg1010800.mp4",
+"stashed/max/sg/sg1012100.mp4",
+"stashed/max/sg/sg1020200.mp4",
+"stashed/max/sg/sg1080100.mp4",
+"stashed/max/sg/sg1081200.mp4",
+"stashed/max/sg/sg1081900.mp4",
+"stashed/max/sg/sg1082400.mp4",
+"stashed/max/sg/sg1173000.mp4",
+"stashed/max/sg/sg1175630.mp4",
+"stashed/max/sg/sg2090530.mp4",
+"stashed/max/sg/sg2091200.mp4",
+"stashed/max/sm/sm021800.mp4",
+"stashed/Mf/ILTPGT 5 - MF.mp4",
+"stashed/Mf/MariaFord1_NakedObsession.mp4",
+"stashed/Mf/MariaFord7_ShowgirlMurders.mp4",
+"stashed/Mf/Maria_Ford-The_Key_to_Sex-1.mp4",
+"stashed/Other/110289_dsl.mp4",
+"stashed/Other/bm.mp4",
+"stashed/Other/Kristin Bauer - Dancing at the Blue Iguana (2000).mp4",
+"stashed/Other/Patricia_Ford_2.mp4",
+"stashed/Other/td.mp4"
+
+
+
+
+
+
+];
+
+var kidsvideoSources = [
+      "A Bug's Life.m4v"
+    , "Brave BD.m4v"
+    , "Chicken Run.m4v"
+    , "Finding Nemo.m4v"
+    , "Frozen BD.m4v"
+    , "Ice Age 3.m4v"
+    , "Madagascar 2.m4v"
+    , "Madagascar 3 BD.mp4"
+    , "Minion 2 HD.m4v"
+    , "Stuart Little.m4v"
+    , "Tangled BD.m4v"
+    , "Toy Story 2.m4v"
+    , "Toy Story 3.m4v"
+
+];
+
+var videoElements = new Array();
+
+
+function randBaseItem(s) {
+  return sprintf("%s/%s", base, randItem(s));
+}
+
+
+function videoOnEnded(e) {
+  var v = e.target;
+  v.src = randBaseItem(videoSources);
+  v.playbackRate = videoPlaybackRate;
+  v.play();
+}
+
+function makeVideo(src) {
+
+  var v = document.createElement("video");
+  
+  // v.src = sprintf("video/%s.mp4", src);
+  // v.defaultPlaybackRate = 0.2;
+
+  console.log(src);
+
+  v.src = src;
+  v.autoplay     = 1;
+  v.width        = 480;
+  v.height       = 360;
+  v.muted        = 1;
+  v.controls     = 1;
+  v.playbackRate = videoPlaybackRate;
+  v.onended      = videoOnEnded;
+
+  videoElements.push(v);
+
+  document.body.appendChild(v);
+  return v;
+}
+
+
+function makeVideos()
+{
+  for (var i = 0; i < 4; ++i)
+	  makeVideo(randBaseItem(videoSources));
+}
+
+</script>
+</head>
+
+<body onload="makeVideos()">
+
+
+
+
+
+
+
+</body>
+</html>
