@@ -12,22 +12,17 @@
 
 var videoPlaybackRate = 0.2;
 
-// var base = "file:///Volumes/Untitled/Videos/Kids";
-// var base = "ftp:///73.39.225.169:21/Android/hard/ce";
-// var base = "file:///Volumes/Untitled/Code/s/v/hard/ce";
-// var base = "file:///Volumes/Untitled/Code/s/v/";
-// var base = "172.25.63.1/files/Code/s/v/";
-var base = "http://172.25.63.1/cache/078C6775DEADBEEFFEEDFACEDEADBEEF00000000000000000000000000000000/files/Code/s/v/";
 
-var videoSources = [
+var adultvideoSources = [
 
+// 28
 "lm/m/Dancing Girl.mp4",
-"lm/m/Lorissa McComas - Spankwire.com.mp4",
+"lm/m/Lorissa McComas - Spankwire.mp4",
 "lm/m/Lorissa McComas strip.mp4",
-"lm/wondershare/Lorissa McComas - Lap Dancing - KeezMovies.com.mp4",
+"lm/wondershare/Lorissa McComas - Lap Dancing - KeezMovies.mp4",
 "lm/wondershare/LORISSA MCCOMAS and NIKKI FRITZ.mp4",
-"lm/wondershare/LORISSA MCCOMAS PRIVATE DANCE - Pornhub.com#!.mp4",
-"lm/wondershare/Lorissa McComas Testing The Limits - MadThumbs&trade;.mp4",
+"lm/wondershare/LORISSA MCCOMAS PRIVATE DANCE - Pornhub.mp4",
+"lm/wondershare/Lorissa McComas Testing The Limits - MadThumbs.mp4",
 "lm/wondershare/Lorissa__McComas05.mp4",
 "lm/wondershare/Lorissa__McComas08.mp4",
 "lm/unsynced/lm1.mp4",
@@ -37,6 +32,22 @@ var videoSources = [
 "lm/unsynced/air1.mp4",
 "lm/unsynced/air2.mp4",
 "lm/unsynced/Lap Dancing.mp4",
+"stashed/lm/Bath.mp4",
+"stashed/lm/Dancing Girl.mp4",
+"stashed/lm/lmBachelorParty.mp4",
+"stashed/lm/lmChaise.mp4",
+"stashed/lm/LMC_LapDancing_Divx.mp4",
+"stashed/lm/lmX.mp4",
+"stashed/lm/Lorissa McComas - Spankwire.mp4",
+"stashed/lm/LORISSA MCCOMAS PRIVATE DANCE - Pornhub.mp4",
+"stashed/lm/Lorissa McComas strip.mp4",
+"stashed/lm/Lorissa_McComas-Virtual_Desire-01.mp4",
+"stashed/lm/Lorissa_McComas-Voyeur-02.mp4",
+"stashed/lm/Mkone5865-HardAsNails-LorissaMcComas.mp4",
+
+
+
+// 12
 "hard/ce/Tunnel of Love.mp4",
 "hard/ce/scene collection 3.mp4",
 "hard/ce/scene collection 2.mp4",
@@ -48,6 +59,10 @@ var videoSources = [
 "hard/ce/Party Favors 1.mp4",
 "hard/ce/Party Favors 2.mp4",
 "hard/ce/Party Favors 3.mp4",
+"stashed/TIAO_JeanPoremba_strips.mp4",
+
+
+// 10
 "hard/gd/Atlanta.mp4",
 "hard/gd/gsd1.mp4",
 "hard/gd/gsd2.mp4",
@@ -58,10 +73,16 @@ var videoSources = [
 "hard/gd/gsd7.mp4",
 "hard/gd/gsdParadise.mp4",
 "hard/gd/ZemanovaGarden.mp4",
+
+
+// 4
 "hard/sj/Xvideos.Com 54Fb25882B4A409F8A6D14F3E1A021C0.mp4",
 "hard/sj/Xvideos.Com Cd9A79286E0B26A2Ac845Fbd3D574397 1.mp4",
 "hard/sj/Xvideos.Com 92F2Bd8691E7654E88C5305C2D20Fbec 1.mp4",
 "hard/sj/Xvideos.Com 24507B3B7137F27Ac9958Cc26Aa3E0Fa.mp4",
+
+
+// 11
 "hard/km/km1040.mp4",
 "hard/km/km2250.mp4",
 "hard/km/27484.mp4",
@@ -73,26 +94,18 @@ var videoSources = [
 "hard/km/stairs.mp4",
 "hard/km/poolboy.mp4",
 "hard/km/Postcard 5.mp4",
+
+
+// 6
 "hard/other/NicoleAnistonGym.mp4",
 "hard/other/ride.mp4",
-"other/Tan Asian Fake Tits Bikini - Pornhub.com#!.mp4",
-"other/Tan asian fake tits pink bikini - Pornhub.com.mp4",
+"other/Tan Asian Fake Tits Bikini - Pornhub.mp4",
+"other/Tan asian fake tits pink bikini - Pornhub.mp4",
 "other/jw/Jennifer Walcott Revealed.mp4",
-"other/ma/Monique Alexander - DREAM POV - Pornhub.com.mp4",
-"other/mf/Stripteaser  - Amateur sex video - Tube8.com.mp4",
-"stashed/TIAO_JeanPoremba_strips.mp4",
-"stashed/lm/Bath.mp4",
-"stashed/lm/Dancing Girl.mp4",
-"stashed/lm/lmBachelorParty.mp4",
-"stashed/lm/lmChaise.mp4",
-"stashed/lm/LMC_LapDancing_Divx.mp4",
-"stashed/lm/lmX.mp4",
-"stashed/lm/Lorissa McComas - Spankwire.com.mp4",
-"stashed/lm/LORISSA MCCOMAS PRIVATE DANCE - Pornhub.com#!.mp4",
-"stashed/lm/Lorissa McComas strip.mp4",
-"stashed/lm/Lorissa_McComas-Virtual_Desire-01.mp4",
-"stashed/lm/Lorissa_McComas-Voyeur-02.mp4",
-"stashed/lm/Mkone5865-HardAsNails-LorissaMcComas.mp4",
+"other/ma/Monique Alexander - DREAM POV - Pornhub.mp4",
+
+
+// 65
 "stashed/max/be/be1092230.mp4",
 "stashed/max/be/be1121730.mp4",
 "stashed/max/be/be1131445.mp4",
@@ -158,10 +171,17 @@ var videoSources = [
 "stashed/max/sg/sg2090530.mp4",
 "stashed/max/sg/sg2091200.mp4",
 "stashed/max/sm/sm021800.mp4",
+
+
+// 5
+"other/mf/Stripteaser  - Amateur sex video - Tube8.mp4",
 "stashed/Mf/ILTPGT 5 - MF.mp4",
 "stashed/Mf/MariaFord1_NakedObsession.mp4",
 "stashed/Mf/MariaFord7_ShowgirlMurders.mp4",
 "stashed/Mf/Maria_Ford-The_Key_to_Sex-1.mp4",
+
+
+// 5
 "stashed/Other/110289_dsl.mp4",
 "stashed/Other/bm.mp4",
 "stashed/Other/Kristin Bauer - Dancing at the Blue Iguana (2000).mp4",
@@ -191,6 +211,34 @@ var kidsvideoSources = [
     , "Toy Story 3.m4v"
 
 ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var base = "ftp:///73.39.225.169:21/Android/hard/ce";
+// var base = "file:///Volumes/Untitled/Code/s/v/hard/ce";
+// var base = "172.25.63.1/files/Code/s/v/";
+// var base = "file:///Volumes/Untitled/Code/s/v/";
+
+
+
+
+var videoSources = adultvideoSources;
+var base = "http://172.25.63.1/cache/078C6775DEADBEEFFEEDFACEDEADBEEF00000000000000000000000000000000/files/Code/s/v/";
+
+
+
+// var videoSources = kidsvideoSources;
+// var base = "file:///Volumes/Untitled/Videos/Kids";
 
 var videoElements = new Array();
 
@@ -236,6 +284,86 @@ function randBaseItem(s) {
 }
 
 
+var touch1 = 0,
+    touch2 = 0;
+
+function setPos(v, x1, x2) {
+  var d = (x2 - x1) / v.width;
+
+  var pos = v.currentTime + d * v.duration;
+
+  if (pos < 0) pos = 0;
+  if (pos > v.duration) pos = v.duration;
+
+  v.currentTime = pos;
+}
+
+function handleMouse(e) {
+  e.preventDefault();
+
+
+
+  switch (e.type) {
+    case "mousedown":
+      touch1 = e.clientX;
+      break;
+
+    case "mousemove":
+      break;
+
+    case "mouseup":
+
+      touch2 = e.clientX;
+
+      console.log(touch1, touch2);
+
+      setPos(e.currentTarget, touch1, touch2);
+
+      break;
+
+  }
+}
+
+
+function handleTouch(e) {
+  e.preventDefault();
+
+  var et = e.touches;
+  var  t = e.changedTouches[0];
+
+  if (t.length > 1)
+    return;
+
+
+  switch (e.type) {
+    case "mousedown":
+    case "touchstart":
+      touch1 = t.clientX;
+      break;
+
+    case "mousemove":
+    case "touchmove":
+      break;
+
+    case "mouseup":
+    case "touchend":
+      if (t.length)
+        return;
+
+      touch2 = t.clientX;
+
+      setPos(e.currentTarget, touch1, touch2);
+
+      console.log(touch1, touch2);
+
+      break;
+
+  }
+}
+
+
+
+
 function videoOnEnded(e) {
   var v = e.target;
   v.src = randBaseItem(videoSources);
@@ -264,6 +392,17 @@ function makeVideo(src) {
   videoElements.push(v);
 
   document.body.appendChild(v);
+
+
+  v.addEventListener("touchstart",  handleTouch, false);
+  v.addEventListener("touchend",    handleTouch, false);
+  v.addEventListener("touchcancel", handleTouch, false);
+  v.addEventListener("touchmove",   handleTouch, false);
+
+  v.addEventListener("mousedown",   handleMouse, false);
+  v.addEventListener("mousemove",   handleMouse, false);
+  v.addEventListener("mouseup",     handleMouse, false);
+
   return v;
 }
 
@@ -277,7 +416,7 @@ function makeVideos()
 </script>
 </head>
 
-<body onload="makeVideos()">
+<body style="background-color:black" onload="makeVideos()">
 
 
 
