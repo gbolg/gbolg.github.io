@@ -227,13 +227,13 @@ var kidsvideoSources = [
 // var base = "ftp:///73.39.225.169:21/Android/hard/ce";
 // var base = "file:///Volumes/Untitled/Code/s/v/hard/ce";
 // var base = "172.25.63.1/files/Code/s/v/";
-// var base = "file:///Volumes/Untitled/Code/s/v/";
+var base = "file:///Volumes/Untitled/Code/s/v/";
 
 
 
 
 var videoSources = adultvideoSources;
-var base = "http://172.25.63.1/cache/078C6775DEADBEEFFEEDFACEDEADBEEF00000000000000000000000000000000/files/Code/s/v/";
+// var base = "http://172.25.63.1/cache/078C6775DEADBEEFFEEDFACEDEADBEEF00000000000000000000000000000000/files/Code/s/v/";
 
 
 
@@ -284,18 +284,42 @@ function randBaseItem(s) {
 }
 
 
-var touch1 = 0,
-    touch2 = 0;
+var touchx, touchy;
 
-function setPos(v, x1, x2) {
-  var d = (x2 - x1) / v.width;
+function setBoundedPct(orig, pct, maximum) {
 
-  var pos = v.currentTime + d * v.duration;
+  var pos = orig + pct * maximum;
 
   if (pos < 0) pos = 0;
-  if (pos > v.duration) pos = v.duration;
+  if (pos > maximum) pos = maximum;
 
-  v.currentTime = pos;
+  return pos;
+}
+
+function setPos(v, d) {
+  v.currentTime = setBoundedPct(v.currentTime, d/v.width, v.duration);
+}
+
+function setVideoParams(v, dx, dy) {
+
+  console.log(dx, dy);
+
+  // didn't move much at all, so toggle play/pause
+  if (Math.max(Math.abs(dx), Math.abs(dy)) < 10) {
+    if (v.paused)
+      v.play();
+    else
+      v.pause();
+  }
+
+  // moved horizontally more, so seek
+  else if (Math.abs(dx) > Math.abs(dy))
+    v.currentTime = setBoundedPct(v.currentTime, dx/v.width, v.duration);
+
+  // moved vertically more, so change speed
+  else
+    v.playbackRate = 0.1 + setBoundedPct(v.playbackRate, dy/v.height, 2);
+
 }
 
 function handleMouse(e) {
@@ -305,7 +329,8 @@ function handleMouse(e) {
 
   switch (e.type) {
     case "mousedown":
-      touch1 = e.clientX;
+      touchx = e.clientX;
+      touchy = e.clientY;
       break;
 
     case "mousemove":
@@ -313,11 +338,10 @@ function handleMouse(e) {
 
     case "mouseup":
 
-      touch2 = e.clientX;
+      var dx = e.clientX - touchx;
+      var dy = e.clientY - touchy;
 
-      console.log(touch1, touch2);
-
-      setPos(e.currentTarget, touch1, touch2);
+      setVideoParams(e.currentTarget, dx, -dy);
 
       break;
 
@@ -338,7 +362,8 @@ function handleTouch(e) {
   switch (e.type) {
     case "mousedown":
     case "touchstart":
-      touch1 = t.clientX;
+      touchx = t.clientX;
+      touchy = t.clientY;
       break;
 
     case "mousemove":
@@ -350,11 +375,10 @@ function handleTouch(e) {
       if (t.length)
         return;
 
-      touch2 = t.clientX;
+      var dx = t.clientX - touchx;
+      var dy = t.clientY - touchy;
 
-      setPos(e.currentTarget, touch1, touch2);
-
-      console.log(touch1, touch2);
+      setVideoParams(e.currentTarget, dx, dy);
 
       break;
 
@@ -409,6 +433,8 @@ function makeVideo(src) {
 
 function makeVideos()
 {
+  // makeVideo("smb://skip:ambly0pia@linksys02851/Android/max/sm021800.mp4");
+
   for (var i = 0; i < 4; ++i)
 	  makeVideo(randBaseItem(videoSources));
 }
