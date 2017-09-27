@@ -177,9 +177,17 @@ function makeButtons() {
     setGlobalQuery(allStars[1]);
   }
 }
+
+function userspec(e) {
+  setQuery(document.getElementById("userinput").value);
+}
+
 </script>
 </head>
 
 <body onload="makeButtons()">
+
+<input type="search" id="userinput" onsearch="userspec()">
+
 </body>
 </html>
