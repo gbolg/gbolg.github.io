@@ -17,21 +17,30 @@ var photoSites = [
 
 var videoSites = [
   "jjj.NalFrk.pbz/frnepu/?d=%f",
+  "jjj.PyvcUhagre.pbz/frnepu/%f",
+  "jjj.PbyyrpgvbaBsOrfgCbea.pbz/frnepu/%f",
   "jjj.QrsvarOnor.pbz/frnepu/?jbeqf=%f&frnepu=&glcr=1",
+  "jjj.QeGhore.pbz/frnepu/ivqrbf/%f",
+  "jjj.Rcbeare.pbz/frnepu/%f/",
+  "jjj.Snncl.pbz/frnepu/d=%f",
   "jjj.TbambKkkzbivrf.pbz/frnepu/%f/",
+  "Zbgureyrff.pbz/grez/%f",
   "jjj.Ahqrivfgn.pbz/?d=%f&f=g",
   "vcnq.CresrpgTveyf.arg/frnepu/%f/",
   "jjj.Cbea.pbz/ivqrbf/frnepu?d=%f",
+  "jjj.Cbeauq.pbz/frnepu?frnepu=%f",
   "jjj.Cbeauho.pbz/ivqrb/frnepu?frnepu=%f",
   "jjj.Cbeazq.pbz/fgenvtug/%f",
   "jjj.Cbeaghor.pbz/frnepu/?d=%f",
   "jjj.Erqghor.pbz/?frnepu=%f",
+  "jjj.FcnaxOnat.pbz/f/%f/",
   "jjj.Gansyvk.pbz/frnepu.cuc?jung=%f",
   "jjj.Ghor8.pbz/frnepurf.ugzy?d=%f",
   "jjj.GhorCbeaPynffvp.pbz/frnepu/%f/",
   "jjj.Ghorfgnpx.pbz/frnepu/%f/",
   "jjj.Ghxvs.pbz/frnepu/%f/",
   "jjj.Gkkk.pbz/frnepu/?f=%f",
+  "jjj.Icbea.pbz/frnepu?d=%f",
   "jjj.Kunzfgre.pbz/frnepu.cuc?sebz=&arj=&d=%f&dpng=ivqrb",
   "jjj.Kakk.pbz/?x=%f",
   "jjj.Kivqrbf.pbz/?x=%f",
@@ -178,16 +187,25 @@ function makeButtons() {
   }
 }
 
-function userspec(e) {
-  setQuery(document.getElementById("userinput").value);
+function userinput(e) {
+  setGlobalQuery(document.getElementById("userinput").value);
 }
+
+function userspec(e) {
+  var v = document.getElementById("userinput").value;
+
+  // don't take action on a "clear"
+  if (v)
+    setQuery(document.getElementById("userinput").value);
+}
+
 
 </script>
 </head>
 
 <body onload="makeButtons()">
 
-<input type="search" id="userinput" onsearch="userspec()">
+<input type="search" id="userinput" oninput="userinput()" onsearch="userspec()">
 
 </body>
 </html>
