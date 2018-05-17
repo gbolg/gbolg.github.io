@@ -1,0 +1,11 @@
+f="/Volumes/73.39.225.169/Android/j"
+
+#find -s $f  -type f | sed 's_\(.*/\)\(.*\).jpg_"\2", _g'
+
+echo var items = \[
+
+find -s $f -path "$f/*" -type d -exec makeJpg1  '{}' -name "*.jpg" \;
+
+
+echo \];
+
