@@ -3,7 +3,7 @@
 d=$(printf "%s\n" "${1%/*}" )
 f=$(printf "%s\n" "${1##*/}" )
 
-echo [ \"${1##*Android/}\", \"jpg\"
+echo [ \"${1##*Android/j/}\", \"jpg\"
 
 find  -s $1  -name "*.jpg" -execdir makeJpg2 {} \;
 

@@ -13,23 +13,55 @@
 
 <script language="JavaScript">
 
-var preamble = "ftp://skip:ambly0pia@73.39.225.169/Android";
-var currentItem = items[2];
+var preamble    = "ftp://skip:ambly0pia@73.39.225.169/Android/j";
+var currentFile = 0;
+var currentItem = items[0];
+var currentMode = 0;
+var currentInc  = 1;
 
-function randFile(Items) {
-  var itemNo = Math.floor(Math.random() * (Items.length - 2));
-  var item   = Items[2 + itemNo];
-  // var item = Items[2 + Math.floor(Math.random() * (Items.length - 2))];
-  return sprintf("%s/%s.%s", Items[0], item, Items[1]);
+function chgDir()
+{
+  currentInc = -currentInc;
 }
+
+function nameFile(item, n) {
+  return sprintf("%s/%s.%s", item[0], n, item[1]);
+}
+
+function nextFile(Items)
+{
+  var n;
+
+  if (currentMode == 0) {
+    n = Math.floor(Math.random() * (Items.length - 2));
+  }
+  else {
+    n = currentFile + currentInc;
+    if (n < 0)
+      n =   Items.length - 3;
+    if (n > Items.length - 3)
+      n = 0;
+  }
+  currentFile = n;
+  return sprintf("%s/%s.%s", Items[0], Items[2 + n], Items[1]);
+}
+
+
 
 function once()
 {
   appendText(sprintf("%s %s %d %d %d", items[0][2], items[1][3], items.length, items[0].length, items[1].length));
 }
 
+function setMode(n)
+{
+  currentMode = n;
+  swapImage();
+}
+
 function setItem(n)
 {
+  currentFile = 9999;
   currentItem = items[n];
   swapImage();
 }
@@ -39,7 +71,7 @@ function swapImage()
   var i = new Image();
 
   i.onload = function() { document.slide.setAttribute("src", i.src); };
-  i.src    = sprintf("%s/%s", preamble, randFile(currentItem));
+  i.src    = sprintf("%s/%s", preamble, nextFile(currentItem));
   // setTimeout("swapImage()", 2000);
 }
 
@@ -76,8 +108,12 @@ function init(Items) {
 <button type="button" onclick="setItem(2)">lm0</button>
 -->
 
-<img width="100%" height="auto" name="slide" src="http://picsum.photos/600/480" onclick="swapImage()" touchend="swapImage()" />
+<img width="100%" height="auto" name="slide" src="http://picsum.photos/600/480" onclick="swapImage()" ondragend="swapImage()" />
 
+
+<button type="button" onclick="setMode(0)">rnd</button>
+<button type="button" onclick="setMode(1)">seq</button>
+<button type="button" onclick="chgDir()">dir</button>
 
 
 
